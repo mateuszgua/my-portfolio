@@ -1,0 +1,18 @@
+services:
+  backend:
+    build:
+      context: .
+    restart: unless-stopped
+    ports:
+      - "5050:5050"
+    volumes:
+      - app:/app
+    networks:
+      - backend_network
+
+networks:
+  backend_network:
+
+
+volumes:
+  app:
