@@ -1,6 +1,6 @@
 FROM python:3.10-alpine3.16
 
-WORKDIR /portfolio-app
+WORKDIR /portfolio_app
 
 RUN pip install --upgrade pip
 
@@ -9,9 +9,9 @@ RUN apk update && apk upgrade && \
 
 RUN apk add --no-cache gcc musl-dev linux-headers
 
-COPY ./requirements.txt /portfolio-app/requirements.txt
+COPY ./requirements.txt /portfolio_app/requirements.txt
 
-COPY . /portfolio-app
+COPY . /portfolio_app
 
 ENV VIRTUAL_ENV=/home/mateusz/Learn/my-portfolio/my_env
 RUN python -m venv $VIRTUAL_ENV
@@ -22,4 +22,4 @@ RUN export FLASK_APP=app.py
 RUN pip install -r requirements.txt
 
 EXPOSE 5050
-CMD ["flask", "--app", "app", "run", "--host=0.0.0.0"]
+CMD ["flask", "--app", "portfolio_app", "run", "--host=0.0.0.0"]

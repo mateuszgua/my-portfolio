@@ -6,7 +6,7 @@ services:
     ports:
       - "5050:5050"
     volumes:
-      - app:/app
+      - portfolio-app:/portfolio_app
     networks:
       - backend_network
 
@@ -15,4 +15,4 @@ networks:
 
 
 volumes:
-  app:
+  portfolio-app:
