@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container">
+    <div class="wrapper scroll-wrapper">
+        <div class="top-text">
+            <p class="text-title desktop-view">{{ common.first_name }}</p>
+            <p class="text-title desktop-view">{{ common.last_name }}</p>
+            <p class="text-title mobile-view">{{ common.first_name }} {{ common.last_name }}</p>
+            <div class="social-icons">
+                <a target="_blank" href="#">
+                    <img class="title-logo" src="#">
+                </a>
+                <a target="_blank" href="#">
+                    <img class="title-logo" src="#">
+                </a>
+                <a target="_blank" href="#">
+                    <img class="title-logo" src="#">
+                </a>
+                <a target="_blank" href="#">
+                    <img class="title-logo" src="#">
+                </a>
+            </div>
+        </div>
+        <div class="middle-text">
+            <p class="text-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+
+            <p class="text-content">Let's get in touch!</p>
+
+            <p class="text-content">Mateusz Guła</p>
+
+            <p class="text-content"><a href="timeline">For more about me, my timeline, read on here.</a></p>
+
+            <br>
+        </div>
+    </div>
+</div>
+{% endblock %}
