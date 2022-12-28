@@ -64,10 +64,12 @@ def contact():
             email = request.form["email"]
             subject = request.form["subject"]
             message = request.form["message"]
-            msg = Message(subject=subject, body=message, sender=email, recipients=['my_mail@gmail.com'])
+            msg = Message(subject=subject, body=message,
+                          sender=email, recipients=['my_mail@gmail.com'])
             mail.send(msg)
         else:
             flash('All fields are required.')
-            return redirect(url_for('contact'))
+
+        return redirect(url_for('contact'))
     else:
         return render_template('contact.html', form=contact_form)
