@@ -45,3 +45,9 @@ def get_static_file(path):
 
 def get_static_json(path):
     return json.load(open(get_static_file(path)))
+
+
+@app.route('/timeline')
+def timeline():
+    data = get_static_json("static/files/timeline.json")
+    return render_template('timeline.html', common=common, timeline=data)
