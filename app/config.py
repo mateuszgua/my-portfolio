@@ -12,7 +12,7 @@ class Config:
     STATIC_FOLDER = 'static'
 
     HOST = '0.0.0.0'
-    PORT = 5050
+    PORT = 5000
     DEBUG = False
     TESTING = False
 

@@ -4,9 +4,9 @@ services:
       context: .
     restart: unless-stopped
     ports:
-      - "5050:5050"
+      - "5000:5000"
     volumes:
-      - portfolio-app:/portfolio_app
+      - portfolio-app:/app
     networks:
       - backend_network
 
