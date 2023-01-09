@@ -20,15 +20,10 @@ def index():
 
 @app.route('/user', methods=['GET', 'POST'])
 def user():
-    message = {
-        "first_name": "MATEUSZ",
-        "last_name": "GUŁA",
-        "nick": "gua",
-        "field": "Junior Backend Developer",
-        "description": "I am engineer who is been trying his hand at backend for some time now. My last position allowed me start my programming adventure. Since then I have developed my database and web development abilities. I like solving the problems and analytical thinking. I amhardworking and multitasking. I am open mindset to learn new technologies. I feel great at teamwork. In my free time I am interested in sport and new technologies. Also I like play board games."
-    }
+    with open("app/static/files/user.json", "r") as f:
+        data = json.load(f)
     if request.method == 'GET':
-        return jsonify(message)
+        return jsonify(data)
 
 
 @app.route('/users', methods=["GET"])
