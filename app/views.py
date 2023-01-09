@@ -1,29 +1,52 @@
-import os
-import io
 import json
 
-from flask import render_template, request, flash, redirect, url_for
+from flask import render_template, request, flash, redirect, url_for, jsonify
 from flask_mail import Message
 
 from app import app, form, mail
-
+from app.helpers import Helper
 
 common = {
-    'first_name': 'Mateusz',
-    'last_name': 'Guła',
-    'alias': 'gua'
+    'test1': 'test2'
 }
 
 
 @app.route('/')
 def index():
-    return render_template('home.html', common=common)
+    message = {'greeting': 'Hello from Flask!'}
+    return jsonify(message)  # serialize and use JSON headers
+    # return render_template('home.html', common=common)
+
+
+@app.route('/user', methods=['GET', 'POST'])
+def user():
+    message = {
+        "first_name": "MATEUSZ",
+        "last_name": "GUŁA",
+        "nick": "gua",
+        "field": "Junior Backend Developer",
+        "description": "I am engineer who is been trying his hand at backend for some time now. My last position allowed me start my programming adventure. Since then I have developed my database and web development abilities. I like solving the problems and analytical thinking. I amhardworking and multitasking. I am open mindset to learn new technologies. I feel great at teamwork. In my free time I am interested in sport and new technologies. Also I like play board games."
+    }
+    if request.method == 'GET':
+        return jsonify(message)
+
+
+@app.route('/users', methods=["GET"])
+def users():
+    print("users endpoint reached...")
+    with open("users.json", "r") as f:
+        data = json.load(f)
+        data.append({
+            "username": "user4",
+            "pets": ["hamster"]
+        })
+        return jsonify(data)
 
 
 @app.route('/projects')
 def projects():
-    data = get_static_json("static/projects/projects.json")['projects']
-    data.sort(key=order_projects_by_weight, reverse=True)
+    data = Helper.get_static_json("static/projects/projects.json")['projects']
+    data.sort(key=Helper.order_projects_by_weight, reverse=True)
 
     tag = request.args.get('tags')
     if tag is not None:
@@ -33,25 +56,9 @@ def projects():
     return render_template('projects.html', common=common, projects=data, tag=tag)
 
 
-def order_projects_by_weight(projects):
-    try:
-        return int(projects['weight'])
-    except KeyError:
-        return 0
-
-
-def get_static_file(path):
-    site_root = os.path.realpath(os.path.dirname(__file__))
-    return os.path.join(site_root, path)
-
-
-def get_static_json(path):
-    return json.load(open(get_static_file(path)))
-
-
 @app.route('/timeline')
 def timeline():
-    data = get_static_json("static/files/timeline.json")
+    data = Helper.get_static_json("static/files/timeline.json")
     return render_template('timeline.html', common=common, timeline=data)
 
 

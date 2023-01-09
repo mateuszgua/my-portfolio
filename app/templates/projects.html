@@ -1,33 +1,38 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mateusz Guła Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+    <div class="hero">
+        <nav>
+            <img src="images/menu.png" class="menu-img">
+            <img src="images/logo.png" class="logo">
+            <ul>
+                <li><a id="home" href="home.html">Home</a></li>
+                <li><a id="projects" href="projects.html">Projects</a></li>
+                <li><a id="timeline" href="timeline.html">Timeline</a></li>
+                <li><a id="contact" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
 
-<div class="container">
-    <div class="row">
-        {% for project in projects %}
-        <div class="card border-dark mb-3" style="max-width: 30rem;">
-            <div class="card-header text-center">Card</div>
-            <div class="card-body text-dark">
-                <div class="row">
-                    <div class="col text-left">
-                        <h5 class="card-title text-center">{{ project }}</h5>
-                    </div>
+        <div class="projects-container">
+            {% for project in projects %}
+            <div class="card">
+                <div class="container">
+                    <h4><b>Test 1</b></h4>
+                    <p>Test 2</p>
                 </div>
             </div>
-        </div>
-        {% endfor %}
-    </div>
-</div>
-<!-- {% if tag is not none %}
-<div class="row">
-    <div class="md-chips md-chips-center col s2 offset-s5">
-        <div class="md-chip md-chip-hover">
-            <a class="md-chip-link" href="/projects">{{ tag }}</a>
-            <div class="md-chip-remove"><a href="/projects" class="md-chip-remove-span">x</a></div>
+            {% endfor %}
         </div>
     </div>
-</div>
-{% endif %} -->
 
-{% endblock %}
+</body>
+
+</html>
