@@ -28,10 +28,15 @@ def projects():
         return jsonify(data)
 
 
-@app.route('/timeline')
+@app.route('/timeline', methods=["GET"])
 def timeline():
-    data = Helper.get_static_json("static/files/timeline.json")
-    return render_template('timeline.html', common=common, timeline=data)
+    with open("app/static/files/timeline.json", "r") as f:
+        data = json.load(f)
+    if request.method == 'GET':
+        return jsonify(data)
+
+    # data = Helper.get_static_json("static/files/timeline.json")
+    # return render_template('timeline.html', common=common, timeline=data)
 
 
 @app.route('/contact', methods=('GET', 'POST'))

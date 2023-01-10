@@ -1,28 +1,61 @@
-{% extends "base.html" %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mateusz Guła Portfolio</title>
+    <link rel="icon" type="image/png" href="images/devlogo_light.png" />
+    <link rel="stylesheet" href="style.css">
+</head>
 
-{% block content %}
-
-<div class="container">
-    <div class="row">
-        {% for year in timeline %}
-        <div class="col s12 m4 l8">
-            <span class="date">{{ year.year }}</span>
-            <ul class="list">
-                {% for event in year.events %}
-                <li>
-                    <div class="icon-title">
-                        <i class="tiny material-icons">{{ event.icon }}</i>
-                        <a href="/timeline" class="title">{{ event.title }}</a>
-                    </div>
-                    <span class="content">{{ event.content }}</span>
-                </li>
-                {% endfor %}
+<body>
+    <div class="hero">
+        <nav>
+            <img src="images/dev_light.png" class="logo">
+            <ul>
+                <li><a id="home" href="home.html">Home</a></li>
+                <li><a id="projects" href="projects.html">Projects</a></li>
+                <li><a id="timeline" href="timeline.html">Timeline</a></li>
+                <li><a id="contact" href="contact.html">Contact</a></li>
             </ul>
-        </div>
-        {% endfor %}
-    </div>
-    <br>
-    <br>
-</div>
+        </nav>
 
-{% endblock %}
+        <div class="output"></div>
+
+        <div class="timeline">
+        </div>
+    </div>
+
+</body>
+<script>
+    const output = document.querySelector('.output');
+    const output1 = document.createElement('div');
+    const ul = document.createElement('ul');
+
+    output.append(output1);
+    output.append(ul);
+    fetch('http://localhost:5000/timeline')
+        .then(function (response) {
+            return response.json();
+        }).then((data) => {
+            addtoPage(data);
+        });
+
+    function addtoPage(arr) {
+        arr.forEach(element => {
+            createCard(element.year, element.title, element.content);
+        });
+    }
+
+    const projects = document.querySelector(".timeline")
+    function createCard(timelineYear, timelineTitle, timelineContent) {
+        let code = `
+        <div class="square">
+            <div class="year">${timelineYear}</div>
+            <div class="title">${timelineTitle}</div>
+            <p class="content">${timelineContent}</p>
+        </div>
+        `;
+        projects.innerHTML += code;
+    }
+</script>
+
+</html>
