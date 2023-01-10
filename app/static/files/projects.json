@@ -1,9 +1,35 @@
 [
     {
-        "name": "Project 1",
-        "link": "project-1",
+        "name": "Bet Sport Games",
+        "technology": "Python",
         "date": "01/02/2003",
-        "short": "A short description of the project ...",
+        "short": "A short description of the project ",
+        "status": "complete",
+        "urlGit": "https://github.com/mateuszgua/game_typer",
+        "urlDemo": "#",
+        "weight": 1,
+        "tags": [
+            "tech"
+        ]
+    },
+    {
+        "name": "To do app",
+        "technology": "Go",
+        "date": "01/02/2003",
+        "short": "A short description of the project ",
+        "status": "complete",
+        "urlGit": "#",
+        "urlDemo": "#",
+        "weight": 1,
+        "tags": [
+            "tech"
+        ]
+    },
+    {
+        "name": "Bet Sport Games",
+        "technology": "Python",
+        "date": "01/02/2003",
+        "short": "A short description of the project ",
         "status": "complete",
         "weight": 1,
         "tags": [
@@ -11,22 +37,36 @@
         ]
     },
     {
-        "name": "Project 2",
-        "link": "project-2",
-        "date": "04/05/2006",
-        "short": "A short description of the project ...",
+        "name": "To do app",
+        "technology": "Go",
+        "date": "01/02/2003",
+        "short": "A short description of the project ",
+        "status": "complete",
+        "urlGit": "#",
+        "urlDemo": "#",
         "weight": 1,
         "tags": [
-            "media"
+            "tech"
         ]
     },
     {
-        "name": "Project 1",
-        "link": "project-1",
+        "name": "Bet Sport Games",
+        "technology": "Python",
         "date": "01/02/2003",
-        "short": "A short description of the project ...",
+        "short": "A short description of the project ",
         "status": "complete",
-        "weight": 2,
+        "weight": 1,
+        "tags": [
+            "tech"
+        ]
+    },
+    {
+        "name": "To do app",
+        "technology": "Go",
+        "date": "01/02/2003",
+        "short": "A short description of the project ",
+        "status": "complete",
+        "weight": 1,
         "tags": [
             "tech"
         ]

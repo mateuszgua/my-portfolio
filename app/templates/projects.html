@@ -18,29 +18,10 @@
         </nav>
 
         <div class="output"></div>
-        <!-- <ul id="dataList"></ul>
-        <div class="templates">
-            <div id="listItem">
-                <div class="row1">
-                    <div class="title"></div>
-                    <div class="amount"></div>
-                </div>
-                <div class="row2">
-                    <div class="description"></div>
-                </div>
-            </div>
-        </div> -->
 
-        <!-- <div class="projects-container">
-            {% for project in projects %}
-            <div class="card">
-                <div class="container">
-                    <h4><b>Test 1</b></h4>
-                    <p>Test 2</p>
-                </div>
-            </div>
-            {% endfor %}
-        </div> -->
+        <div class="projectHolder">
+
+        </div>
     </div>
 
 </body>
@@ -48,23 +29,36 @@
     const output = document.querySelector('.output');
     const output1 = document.createElement('div');
     const ul = document.createElement('ul');
+
     output.append(output1);
     output.append(ul);
     fetch('http://localhost:5000/projects')
         .then(function (response) {
             return response.json();
         }).then((data) => {
-            console.log(data);
             addtoPage(data);
         });
 
     function addtoPage(arr) {
         arr.forEach(element => {
-            console.log(element);
-            const li = document.createElement('li');
-            li.textContent = element.name;
-            ul.append(li);
+            createCard(element.name, element.technology, element.short, element.status, element.urlGit);
         });
+    }
+
+    const projects = document.querySelector(".projectHolder")
+    function createCard(projectName, projectTechnology, projectDescription, projectStatus, projectGit) {
+        let code = `
+        <div class="card transition">
+            <h2 class="transition">${projectName}</h2>
+            <p class="technology">${projectTechnology}</p>
+            <p class="description">${projectDescription}</p>
+            <p class="status">${projectStatus}</p>
+            <div class="cta-container transition"><a href="#" class="cta">Demo</a></div>
+            <div class="ctb-container transition"><a href="${projectGit}" class="ctb">GitHub</a></div>
+            <div class="card_circle transition"></div>
+        </div>
+        `;
+        projects.innerHTML += code;
     }
 </script>
 
