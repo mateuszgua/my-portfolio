@@ -17,7 +17,21 @@
             </ul>
         </nav>
 
-        <div class="projects-container">
+        <div class="output"></div>
+        <!-- <ul id="dataList"></ul>
+        <div class="templates">
+            <div id="listItem">
+                <div class="row1">
+                    <div class="title"></div>
+                    <div class="amount"></div>
+                </div>
+                <div class="row2">
+                    <div class="description"></div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- <div class="projects-container">
             {% for project in projects %}
             <div class="card">
                 <div class="container">
@@ -26,9 +40,32 @@
                 </div>
             </div>
             {% endfor %}
-        </div>
+        </div> -->
     </div>
 
 </body>
+<script>
+    const output = document.querySelector('.output');
+    const output1 = document.createElement('div');
+    const ul = document.createElement('ul');
+    output.append(output1);
+    output.append(ul);
+    fetch('http://localhost:5000/projects')
+        .then(function (response) {
+            return response.json();
+        }).then((data) => {
+            console.log(data);
+            addtoPage(data);
+        });
+
+    function addtoPage(arr) {
+        arr.forEach(element => {
+            console.log(element);
+            const li = document.createElement('li');
+            li.textContent = element.name;
+            ul.append(li);
+        });
+    }
+</script>
 
 </html>

@@ -241,3 +241,48 @@ button span {
 .container {
     padding: 2px 16px;
 }
+
+ul {
+    list-style-type: none;
+    line-height: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+sup {
+    vertical-align: baseline;
+    position: relative;
+    top: -0.4em;
+    color: red;
+}
+
+div.templates {
+    display: none;
+}
+
+div.title {
+    float: left;
+    overflow: auto;
+}
+
+div.amount {
+    float: right;
+    overflow: auto;
+    color: #37b;
+}
+
+div.description {
+    overflow: auto;
+    font-size: .75em;
+    color: #666;
+    line-height: normal;
+}
+
+.row1,
+.row2 {
+    clear: both;
+}
+
+li {
+    padding: 5px 0;
+}
