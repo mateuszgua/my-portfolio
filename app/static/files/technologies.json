@@ -1,0 +1,46 @@
+[
+    {
+        "technology": "Python",
+        "techImage": "python"
+    },
+    {
+        "technology": "Django",
+        "techImage": "django"
+    },
+    {
+        "technology": "Flask",
+        "techImage": "flask"
+    },
+    {
+        "technology": "Git",
+        "techImage": "git"
+    },
+    {
+        "technology": "Docker",
+        "techImage": "docker"
+    },
+    {
+        "technology": "Go",
+        "techImage": "go"
+    },
+    {
+        "technology": "Linux",
+        "techImage": "linux"
+    },
+    {
+        "technology": "Mongo",
+        "techImage": "mongo"
+    },
+    {
+        "technology": "MySql",
+        "techImage": "mysql"
+    },
+    {
+        "technology": "PostgreSQL",
+        "techImage": "postgresql"
+    },
+    {
+        "technology": "Sql",
+        "techImage": "sql"
+    }
+]

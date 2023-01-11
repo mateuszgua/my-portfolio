@@ -1,58 +1,43 @@
-import os
-import io
 import json
 
-from flask import render_template, request, flash, redirect, url_for
+from flask import render_template, request, flash, redirect, url_for, jsonify
 from flask_mail import Message
 
 from app import app, form, mail
+from app.helpers import Helper
 
 
-common = {
-    'first_name': 'Mateusz',
-    'last_name': 'Guła',
-    'alias': 'gua'
-}
-
-
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
-    return render_template('home.html', common=common)
+    with open("app/static/files/user.json", "r") as f:
+        data = json.load(f)
+    if request.method == 'GET':
+        return jsonify(data)
 
 
-@app.route('/projects')
+@app.route('/technologies', methods=['GET'])
+def technologies():
+    with open("app/static/files/technologies.json", "r") as f:
+        data = json.load(f)
+    if request.method == 'GET':
+        return jsonify(data)
+
+
+@app.route('/projects', methods=["GET"])
 def projects():
-    data = get_static_json("static/projects/projects.json")['projects']
-    data.sort(key=order_projects_by_weight, reverse=True)
-
-    tag = request.args.get('tags')
-    if tag is not None:
-        data = [project for project in data if tag.lower() in [project_tag.lower()
-                                                               for project_tag in project['tags']]]
-
-    return render_template('projects.html', common=common, projects=data, tag=tag)
+    with open("app/static/files/projects.json", "r") as f:
+        data = json.load(f)
+    data.sort(key=Helper.order_projects_by_weight, reverse=True)
+    if request.method == 'GET':
+        return jsonify(data)
 
 
-def order_projects_by_weight(projects):
-    try:
-        return int(projects['weight'])
-    except KeyError:
-        return 0
-
-
-def get_static_file(path):
-    site_root = os.path.realpath(os.path.dirname(__file__))
-    return os.path.join(site_root, path)
-
-
-def get_static_json(path):
-    return json.load(open(get_static_file(path)))
-
-
-@app.route('/timeline')
+@app.route('/timeline', methods=["GET"])
 def timeline():
-    data = get_static_json("static/files/timeline.json")
-    return render_template('timeline.html', common=common, timeline=data)
+    with open("app/static/files/timeline.json", "r") as f:
+        data = json.load(f)
+    if request.method == 'GET':
+        return jsonify(data)
 
 
 @app.route('/contact', methods=('GET', 'POST'))

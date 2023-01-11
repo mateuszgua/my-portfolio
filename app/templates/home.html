@@ -1,47 +1,91 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mateusz Guła Portfolio</title>
+    <link rel="icon" type="image/png" href="../static/images/devlogo_light.png" />
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+</head>
 
-<div class="container">
-    <div class="wrapper scroll-wrapper">
-        <div class="top-text">
-            <p class="text-title desktop-view">{{ common.first_name }}</p>
-            <p class="text-title desktop-view">{{ common.last_name }}</p>
-            <p class="text-title mobile-view">{{ common.first_name }} {{ common.last_name }}</p>
-            <div class="social-icons">
-                <a target="_blank" href="#">
-                    <img class="title-logo" src="#">
-                </a>
-                <a target="_blank" href="#">
-                    <img class="title-logo" src="#">
-                </a>
-                <a target="_blank" href="#">
-                    <img class="title-logo" src="#">
-                </a>
-                <a target="_blank" href="#">
-                    <img class="title-logo" src="#">
-                </a>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="home.html"><img src="../static/images/dev_light.png" class="logo"></a>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-ul">
+                    <li class="nav-item">
+                        <a class="nav-link" id="home" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="projects" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="timeline" href="timeline.html">Timeline</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="hero">
+
+                <div class="card-container">
+                    <div class="my-image">
+                        <img src="../static/images/my_photo.jpeg" class="profile-image">
+                    </div>
+
+                    <div class="text-container">
+                        <h1 id="last_name"></h1>
+                        <h3 id="first_name"></h3>
+                    </div>
+                </div>
+                <div class="field-container">
+                    <h2 id="field"></h2>
+                </div>
+                <div class="output"></div>
+                <div class="technologies">
+                </div>
+
+                <!-- <div class="about-me-container">
+                    <a href="#">ABOUT ME</a>
+                </div> -->
             </div>
         </div>
-        <div class="middle-text">
-            <p class="text-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                laborum.
-            </p>
-
-            <p class="text-content">Let's get in touch!</p>
-
-            <p class="text-content">Mateusz Guła</p>
-
-            <p class="text-content"><a href="timeline">For more about me, my timeline, read on here.</a></p>
-
-            <br>
+    </header>
+    <footer>
+        <div class="container">
+            <img src="../static/images/dev_light.png" class="logo-footer">
+            <p class="text">&copy; Copyright 2022. All rights reserved</p>
+            <ul class="social-media">
+                <li>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </li>
+            </ul>
         </div>
-    </div>
-</div>
+    </footer>
+    <script src="../static/js/home.js"></script>
+    <script src="../static/js/technologies.js"></script>
+    <script src="../static/js/navbar.js"></script>
+</body>
 
-{% endblock %}
+</html>
