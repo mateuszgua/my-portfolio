@@ -85,25 +85,25 @@
                             <span class="circle one"></span>
                             <span class="circle two"></span>
 
-                            <form action="index.html" autocomplete="off">
+                            <form autocomplete="off" onsubmit="sendEmail(); reset(); return false;">
                                 <h3 class="title">Contact me</h3>
                                 <div class="input-container">
-                                    <input type="text" name="name" class="input" />
+                                    <input type="text" name="name" class="input" id="name" />
                                     <label for="">Username</label>
                                     <span>Username</span>
                                 </div>
                                 <div class="input-container">
-                                    <input type="email" name="email" class="input" />
+                                    <input type="email" name="email" class="input" id="email" />
                                     <label for="">Email</label>
                                     <span>Email</span>
                                 </div>
                                 <div class="input-container">
-                                    <input type="tel" name="phone" class="input" />
+                                    <input type="tel" name="phone" class="input" id="phone" />
                                     <label for="">Phone</label>
                                     <span>Phone</span>
                                 </div>
                                 <div class="input-container textarea">
-                                    <textarea name="message" class="input"></textarea>
+                                    <textarea name="message" class="input" id="message"></textarea>
                                     <label for="">Message</label>
                                     <span>Message</span>
                                 </div>
@@ -137,8 +137,27 @@
             </ul>
         </div>
     </footer>
+    <script src="../static/js/contact.js"></script>
+    <script src="../static/js/navbar.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail() {
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "...user@gmail.com",
+                Password: "password",
+                To: '...user@gmail.com',
+                From: document.getElementById("email").value,
+                Subject: "New Contact From Portfolio Page",
+                Body: "Name: " + document.getElementById("name").value
+                    + "<br> Email: " + document.getElementById("email").value
+                    + "<br> Phone no: " + document.getElementById("phone").value
+                    + "<br> Message: " + document.getElementById("message").value
+            }).then(
+                message => alert("Message Sent Succesfully!")
+            );
+        }
+    </script>
 </body>
-<script src="../static/js/contact.js"></script>
-<script src="../static/js/navbar.js"></script>
 
 </html>
