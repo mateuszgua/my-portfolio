@@ -10,41 +10,59 @@
 </head>
 
 <body>
-    <div class="hero">
-        <nav>
-            <img src="../static/images/dev_light.png" class="logo">
-            <ul>
-                <li><a id="home" href="home.html">Home</a></li>
-                <li><a id="projects" href="projects.html">Projects</a></li>
-                <li><a id="timeline" href="timeline.html">Timeline</a></li>
-                <li><a id="contact" href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    <header>
+        <div class="container">
+            <nav>
+                <img src="../static/images/dev_light.png" class="logo" href="home.html">
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-ul">
+                    <li class="nav-item">
+                        <a class="nav-link" id="home" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="projects" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="timeline" href="timeline.html">Timeline</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
 
-        <div class="card-container">
-            <div class="my-image">
-                <img src="../static/images/my_photo.jpeg" class="profile-image">
+            <div class="hero">
+
+                <div class="card-container">
+                    <div class="my-image">
+                        <img src="../static/images/my_photo.jpeg" class="profile-image">
+                    </div>
+
+                    <div class="text-container">
+                        <h1 id="last_name"></h1>
+                        <h3 id="first_name"></h3>
+                    </div>
+                </div>
+                <div class="field-container">
+                    <h2 id="field"></h2>
+                    <!-- <img src="images/python-logo-only.png" class="tech-image"> -->
+                    <!-- <p>Python</p> -->
+                    <p>
+                    </p>
+
+                </div>
+                <div class="about-me-container">
+                    <a href="#">ABOUT ME</a>
+                </div>
             </div>
-
-            <div class="text-container">
-                <h1 id="last_name"></h1>
-                <h3 id="first_name"></h3>
-            </div>
         </div>
-        <div class="field-container">
-            <h2 id="field"></h2>
-            <!-- <img src="images/python-logo-only.png" class="tech-image"> -->
-            <!-- <p>Python</p> -->
-            <p>
-            </p>
-
-        </div>
-        <div class="about-me-container">
-            <a href="#">ABOUT ME</a>
-        </div>
-    </div>
-
+    </header>
 </body>
 <script src="../static/js/home.js"></script>
+<script src="../static/js/navbar.js"></script>
 
 </html>

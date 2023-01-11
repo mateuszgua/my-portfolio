@@ -7,27 +7,41 @@
 </head>
 
 <body>
-    <div class="hero">
-        <nav>
-            <img src="../static/images/dev_light.png" class="logo">
-            <ul>
-                <li><a id="home" href="home.html">Home</a></li>
-                <li><a id="projects" href="projects.html">Projects</a></li>
-                <li><a id="timeline" href="timeline.html">Timeline</a></li>
-                <li><a id="contact" href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    <header>
+        <div class="container">
+            <nav>
+                <img src="../static/images/dev_light.png" class="logo" href="home.html">
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-ul">
+                    <li class="nav-item">
+                        <a class="nav-link" id="home" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="projects" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="timeline" href="timeline.html">Timeline</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
 
-        <div class="output"></div>
+            <div class="hero">
 
-        <div class="timeline">
+                <div class="output"></div>
+                <div class="timeline">
+                </div>
+            </div>
         </div>
-    </div>
-
+    </header>
 </body>
 <script src="../static/js/timeline.js"></script>
-<script>
-
-</script>
+<script src="../static/js/navbar.js"></script>
 
 </html>
