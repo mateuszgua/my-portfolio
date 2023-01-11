@@ -6,10 +6,6 @@ from flask_mail import Message
 from app import app, form, mail
 from app.helpers import Helper
 
-common = {
-    'test1': 'test2'
-}
-
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -34,9 +30,6 @@ def timeline():
         data = json.load(f)
     if request.method == 'GET':
         return jsonify(data)
-
-    # data = Helper.get_static_json("static/files/timeline.json")
-    # return render_template('timeline.html', common=common, timeline=data)
 
 
 @app.route('/contact', methods=('GET', 'POST'))

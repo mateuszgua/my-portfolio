@@ -2,24 +2,37 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    {% block head %}
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mateusz Guła Portfolio</title>
+    <title>{% block title %}Mateusz Guła Portfolio{% endblock %}</title>
+    <link rel="icon" type="image/png" href="images/devlogo_light.png" />
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    {% endblock head %}
 </head>
 
 <body>
-    <div class="hero">
-        <nav>
-            <img src="images/dev_light.png" class="logo">
-            <ul>
-                <li><a id="home" href="home.html">Home</a></li>
-                <li><a id="projects" href="projects.html">Projects</a></li>
-                <li><a id="timeline" href="timeline.html">Timeline</a></li>
-                <li><a id="contact" href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
+    {% block content %}
+    <nav>
+        <img src="images/dev_light.png" class="logo">
+        <ul>
+            <li><a id="home" href="home.html">Home</a></li>
+            <li><a id="projects" href="projects.html">Projects</a></li>
+            <li><a id="timeline" href="timeline.html">Timeline</a></li>
+            <li><a id="contact" href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    {% endblock content %}
+
+
+    {% block script %}
+    {% endblock script %}
+
+    <script src="whatever"></script>
+
+    {% block child_js_below_files %}
+    {% endblock %}
 </body>
 
 </html>

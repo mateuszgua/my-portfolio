@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mateusz Guła Portfolio</title>
-    <link rel="icon" type="image/png" href="images/devlogo_light.png" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="../static/images/devlogo_light.png" />
+    <link rel="stylesheet" href="../static/css/style.css">
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="hero">
         <nav>
-            <img src="images/dev_light.png" class="logo">
+            <img src="../static/images/dev_light.png" class="logo">
             <ul>
                 <li><a id="home" href="home.html">Home</a></li>
                 <li><a id="projects" href="projects.html">Projects</a></li>
@@ -24,7 +24,6 @@
 
         <div class="contact-container">
             <span class="big-circle"></span>
-            <img src="images/shape.png" class="square" alt="" />
             <div class="form">
                 <div class="contact-info">
                     <h3 class="title">Let's get in touch</h3>
@@ -35,15 +34,15 @@
 
                     <div class="info">
                         <div class="information">
-                            <img src="images/location.png" class="icon" alt="" />
+                            <img src="../static/images/location.png" class="icon" alt="" />
                             <p>92 Cherry Drive Uniondale, NY 11553</p>
                         </div>
                         <div class="information">
-                            <img src="images/email.png" class="icon" alt="" />
+                            <img src="../static/images/email.png" class="icon" alt="" />
                             <p>lorem@ipsum.com</p>
                         </div>
                         <div class="information">
-                            <img src="images/phone.png" class="icon" alt="" />
+                            <img src="../static/images/phone.png" class="icon" alt="" />
                             <p>123-456-789</p>
                         </div>
                     </div>
@@ -102,65 +101,6 @@
     </div>
 
 </body>
-<script>
-    fetch('http://localhost:5000/contact')
-        .then(function (response) {
-            return response.json();
-        }).then(function (text) {
-            document.getElementById("first_name").innerText = text.first_name;
-            document.getElementById("last_name").innerText = text.last_name;
-            document.getElementById("field").innerText = text.field;
-            document.getElementById("description").innerText = text.description;
-        });
-
-    const inputs = document.querySelectorAll(".input");
-
-    function focusFunc() {
-        let parent = this.parentNode;
-        parent.classList.add("focus");
-    }
-
-    function blurFunc() {
-        let parent = this.parentNode;
-        if (this.value == "") {
-            parent.classList.remove("focus");
-        }
-    }
-
-    inputs.forEach((input) => {
-        input.addEventListener("focus", focusFunc);
-        input.addEventListener("blur", blurFunc);
-    });
-</script>
-
-<!-- <div class="shadow p-3 mb-5 bg-body rounded">
-    <form action="/contact" method="POST">
-        {{ form.csrf_token }}
-        {{ form.hidden_tag() }}
-
-        {{ form.name.label(class="form-label") }}
-
-        {{ form.name(class="form-control") }}
-        <br />
-
-        {{ form.email.label(class="form-label") }}
-
-        {{ form.email(class="form-control") }}
-        <br />
-
-        {{ form.subject.label(class="form-label") }}
-
-        {{ form.subject(class="form-control") }}
-        <br />
-
-        {{ form.message.label(class="form-label") }}
-
-        {{ form.message(class="form-control") }}
-        <br />
-
-        {{ form.submit(class="btn btn-secondary", type="submit", placeholder="Change" ) }}
-
-    </form>
-</div> -->
+<script src="../static/js/contact.js"></script>
 
 </html>

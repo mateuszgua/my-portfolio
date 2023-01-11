@@ -2,14 +2,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mateusz Guła Portfolio</title>
-    <link rel="icon" type="image/png" href="images/devlogo_light.png" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="../static/images/devlogo_light.png" />
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
 
 <body>
     <div class="hero">
         <nav>
-            <img src="images/dev_light.png" class="logo">
+            <img src="../static/images/dev_light.png" class="logo">
             <ul>
                 <li><a id="home" href="home.html">Home</a></li>
                 <li><a id="projects" href="projects.html">Projects</a></li>
@@ -25,37 +25,9 @@
     </div>
 
 </body>
+<script src="../static/js/timeline.js"></script>
 <script>
-    const output = document.querySelector('.output');
-    const output1 = document.createElement('div');
-    const ul = document.createElement('ul');
 
-    output.append(output1);
-    output.append(ul);
-    fetch('http://localhost:5000/timeline')
-        .then(function (response) {
-            return response.json();
-        }).then((data) => {
-            addtoPage(data);
-        });
-
-    function addtoPage(arr) {
-        arr.forEach(element => {
-            createCard(element.year, element.title, element.content);
-        });
-    }
-
-    const projects = document.querySelector(".timeline")
-    function createCard(timelineYear, timelineTitle, timelineContent) {
-        let code = `
-        <div class="square-timeline">
-            <div class="year">${timelineYear}</div>
-            <div class="title">${timelineTitle}</div>
-            <p class="content">${timelineContent}</p>
-        </div>
-        `;
-        projects.innerHTML += code;
-    }
 </script>
 
 </html>

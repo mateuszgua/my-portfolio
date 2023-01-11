@@ -2,14 +2,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mateusz Guła Portfolio</title>
-    <link rel="icon" type="image/png" href="images/devlogo_light.png" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="../static/images/devlogo_light.png" />
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
 
 <body>
     <div class="hero">
         <nav>
-            <img src="images/dev_light.png" class="logo">
+            <img src="../static/images/dev_light.png" class="logo">
             <ul>
                 <li><a id="home" href="home.html">Home</a></li>
                 <li><a id="projects" href="projects.html">Projects</a></li>
@@ -26,41 +26,6 @@
     </div>
 
 </body>
-<script>
-    const output = document.querySelector('.output');
-    const output1 = document.createElement('div');
-    const ul = document.createElement('ul');
-
-    output.append(output1);
-    output.append(ul);
-    fetch('http://localhost:5000/projects')
-        .then(function (response) {
-            return response.json();
-        }).then((data) => {
-            addtoPage(data);
-        });
-
-    function addtoPage(arr) {
-        arr.forEach(element => {
-            createCard(element.name, element.technology, element.short, element.status, element.urlGit);
-        });
-    }
-
-    const projects = document.querySelector(".projectHolder")
-    function createCard(projectName, projectTechnology, projectDescription, projectStatus, projectGit) {
-        let code = `
-        <div class="card transition">
-            <h2 class="name">${projectName}</h2>
-            <p class="technology">${projectTechnology}</p>
-            <p class="description">${projectDescription}</p>
-            <p class="status">${projectStatus}</p>
-            <div class="cta-container transition"><a href="#" class="cta">Demo</a></div>
-            <div class="ctb-container transition"><a href="${projectGit}" class="ctb">GitHub</a></div>
-            <div class="card_circle transition"></div>
-        </div>
-        `;
-        projects.innerHTML += code;
-    }
-</script>
+<script src="../static/js/projects.js"></script>
 
 </html>

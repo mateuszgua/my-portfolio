@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mateusz Guła Portfolio</title>
-    <link rel="icon" type="image/png" href="images/devlogo_light.png" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="../static/images/devlogo_light.png" />
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
 
 <body>
     <div class="hero">
         <nav>
-            <img src="images/dev_light.png" class="logo">
+            <img src="../static/images/dev_light.png" class="logo">
             <ul>
                 <li><a id="home" href="home.html">Home</a></li>
                 <li><a id="projects" href="projects.html">Projects</a></li>
@@ -23,7 +23,7 @@
 
         <div class="card-container">
             <div class="my-image">
-                <img src="images/my_photo.jpeg" class="profile-image">
+                <img src="../static/images/my_photo.jpeg" class="profile-image">
             </div>
 
             <div class="text-container">
@@ -45,17 +45,6 @@
     </div>
 
 </body>
-<script>
-    fetch('http://localhost:5000/')
-        .then(function (response) {
-            return response.json();
-        }).then(function (text) {
-            document.getElementById("first_name").innerText = text.first_name;
-            document.getElementById("last_name").innerText = text.last_name;
-            document.getElementById("field").innerText = text.field;
-            document.getElementById("description").innerText = text.description;
-        });
-
-</script>
+<script src="../static/js/home.js"></script>
 
 </html>
