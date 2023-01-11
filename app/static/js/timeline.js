@@ -23,7 +23,7 @@ function createCard(timelineYear, timelineTitle, timelineContent) {
         <div class="square-timeline">
             <div class="year">${timelineYear}</div>
             <div class="title">${timelineTitle}</div>
-            <p class="content">${timelineContent}</p>
+            <div class="content">${timelineContent}</div>
         </div>
         `;
     projects.innerHTML += code;

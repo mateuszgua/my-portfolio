@@ -7,9 +7,17 @@ from app import app, form, mail
 from app.helpers import Helper
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET'])
 def index():
     with open("app/static/files/user.json", "r") as f:
+        data = json.load(f)
+    if request.method == 'GET':
+        return jsonify(data)
+
+
+@app.route('/technologies', methods=['GET'])
+def technologies():
+    with open("app/static/files/technologies.json", "r") as f:
         data = json.load(f)
     if request.method == 'GET':
         return jsonify(data)

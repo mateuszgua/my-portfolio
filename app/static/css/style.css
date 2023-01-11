@@ -12,13 +12,13 @@ html {
 }
 
 body {
-    background-color: #212F3D;
+    background-color: #383838;
     color: #fff;
     font-family: 'Raleway', sans-serif;
 }
 
 .hero {
-    background: #212F3D;
+    background: #383838;
     min-height: 100vh;
     width: 100%;
     color: #fff;
@@ -26,7 +26,7 @@ body {
 }
 
 header {
-    background-color: #212F3D;
+    background-color: #383838;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: left bottom;
@@ -74,7 +74,7 @@ nav .logo {
     font-family: 'Raleway', sans-serif;
     padding: 10px 20px;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 28px;
 }
 
 .hamburger {
@@ -197,19 +197,53 @@ nav .logo {
     margin: 0 auto;
 }
 
-.field-container p {
-    grid-column: 1;
-    grid-row: 2;
-    padding: 10px;
-    font-size: 20px;
-    font-weight: 400;
+.technologies {
+    margin-top: 7%;
+    margin-left: 15%;
+    margin-right: 15%;
+    display: flex;
+    grid-auto-rows: auto;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    row-gap: 50px;
 }
 
-.field-container .tech-image {
-    grid-column: 1;
-    grid-row: 2;
-    width: 40px;
-    height: 40px;
+.square-tech {
+
+    width: 100px;
+    height: 100px;
+    background: rgba(232, 232, 232, 0.651);
+    border-radius: 5%;
+    box-shadow: 0px 10px 30px #219651;
+    align-items: center;
+    position: relative;
+}
+
+.square-tech .tech-image {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+.square-tech .tech-image .tech-img {
+    width: auto;
+    height: auto;
+    max-width: 80px;
+    max-height: 60px;
+    background: transparent;
+    margin: auto;
+}
+
+.square-tech .tech-name {
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
 }
 
 .about-me-container {
@@ -540,18 +574,12 @@ body {
 }
 
 .square-timeline .content {
-    word-break: break-all;
     margin: auto;
     text-align: left;
     margin-top: 40px;
     padding-left: 30px;
     font-family: 'Raleway', sans-serif;
     font-size: 20px;
-    font-weight: normal;
-    position: absolute;
-    width: 100%;
-    z-index: 9999;
-    color: #fff;
 }
 
 /* Contact page */
