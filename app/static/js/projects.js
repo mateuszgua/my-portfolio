@@ -4,7 +4,7 @@ const ul = document.createElement('ul');
 
 output.append(output1);
 output.append(ul);
-fetch('http://localhost:5000/projects')
+fetch('http://localhost:5000/projects/load')
     .then(function (response) {
         return response.json();
     }).then((data) => {

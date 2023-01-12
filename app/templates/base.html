@@ -1,38 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    {% block head %}
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Mateusz Guła Portfolio{% endblock %}</title>
-    <link rel="icon" type="image/png" href="images/devlogo_light.png" />
-    <link rel="stylesheet" href="style.css">
+    <title>Mateusz Guła Portfolio</title>
+    <link rel="icon" type="image/png" href="../static/images/devlogo_light.png" />
+    <link rel="stylesheet" href="../static/css/style.css">
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-    {% endblock head %}
 </head>
 
 <body>
-    {% block content %}
-    <nav>
-        <img src="images/dev_light.png" class="logo">
-        <ul>
-            <li><a id="home" href="home.html">Home</a></li>
-            <li><a id="projects" href="projects.html">Projects</a></li>
-            <li><a id="timeline" href="timeline.html">Timeline</a></li>
-            <li><a id="contact" href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-    {% endblock content %}
+    <header>
+        <div class="container">
+            <nav>
+                <a href="{{ url_for('index') }}"><img src="../static/images/dev_light.png" class="logo"></a>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-ul">
+                    <li class="nav-item">
+                        <a class="nav-link" id="home" href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="projects" href="{{ url_for('projects') }}">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="timeline" href="{{ url_for('timeline') }}">Timeline</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact" href="{{ url_for('contact') }}">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        {% block content %}
+        {% endblock %}
+    </header>
+    <footer>
+        <div class="container">
+            <img src="../static/images/dev_light.png" class="logo-footer">
+            <p class="text">&copy; Copyright 2022. All rights reserved</p>
+            <ul class="social-media">
+                <li>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
 
-
-    {% block script %}
-    {% endblock script %}
-
-    <script src="whatever"></script>
-
-    {% block child_js_below_files %}
-    {% endblock %}
 </body>
 
 </html>

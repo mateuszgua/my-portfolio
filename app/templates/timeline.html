@@ -1,38 +1,10 @@
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mateusz Guła Portfolio</title>
-    <link rel="icon" type="image/png" href="../static/images/devlogo_light.png" />
-    <link rel="stylesheet" href="../static/css/style.css">
-    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-</head>
+{% extends 'base.html' %}
+
+{% block content %}
 
 <body>
     <header>
         <div class="container">
-            <nav>
-                <a href="home.html"><img src="../static/images/dev_light.png" class="logo"></a>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-                <ul class="nav-ul">
-                    <li class="nav-item">
-                        <a class="nav-link" id="home" href="home.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="projects" href="projects.html">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="timeline" href="timeline.html">Timeline</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="contact" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-
             <div class="hero">
 
                 <div class="output"></div>
@@ -41,30 +13,8 @@
             </div>
         </div>
     </header>
-    <footer>
-        <div class="container">
-            <img src="../static/images/dev_light.png" class="logo-footer">
-            <p class="text">&copy; Copyright 2022. All rights reserved</p>
-            <ul class="social-media">
-                <li>
-                    <a href="#" class="social-link">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="social-link">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="social-link">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="social-link">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </footer>
     <script src="../static/js/timeline.js"></script>
     <script src="../static/js/navbar.js"></script>
 </body>
 
-</html>
+{% endblock %}
