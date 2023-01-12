@@ -42,10 +42,10 @@ $ # Move to directory
 $ cd folder/to/clone-into/
 $
 $ # Clone the sources
-$ git clone XXX
+$ git clone https://github.com/mateuszgua/my-portfolio.git
 $
 $ # Move into folder
-$ cd XXX
+$ cd cd my-portfolio 
 $
 $ # Create virtual environment
 $ python3 -m venv my_env
@@ -65,10 +65,10 @@ $ # Move to directory
 $ cd folder/to/clone-into/
 $
 $ # Clone the sources
-$ git clone XXX
+$ git clone https://github.com/mateuszgua/my-portfolio.git
 $
 $ # Move into folder
-$ cd XXX
+$ cd cd my-portfolio 
 $
 $ # Start app
 $ docker-compose up --build
@@ -78,7 +78,7 @@ $ # backend_1  |  * Running on http://127.0.0.1:5000
 
 
 ## Project Status
-Project is: _in progress_ 
+Project is: complete 
 
 
 ## Room for Improvement
