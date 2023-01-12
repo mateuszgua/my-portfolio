@@ -1,4 +1,4 @@
-fetch('http://localhost:5000/')
+fetch('http://localhost:5000/user')
     .then(function (response) {
         return response.json();
     }).then(function (text) {
